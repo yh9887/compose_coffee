@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import FA from "react-fontawesome";
@@ -8,7 +7,7 @@ function Header() {
     <div className="header">
       <div className="header_wrap">
         <Link href="/">
-          <Image src="./img/logo-light.svg" alt="" className="logo" />
+          <img src="./img/logo-light.svg" alt="" className="logo" />
         </Link>
         <div className="header_menu">
           <ul className="menu_ul">
