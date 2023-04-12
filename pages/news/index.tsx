@@ -3,7 +3,7 @@ import Footer from "@components/Footer";
 import Link from "next/link";
 
 function News() {
-  const news = localStorage.getItem("NEWS");
+  // const news = localStorage.getItem("NEWS");
   return (
     <>
       <Header />
