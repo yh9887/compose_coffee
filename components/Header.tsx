@@ -1,7 +1,10 @@
+import { library } from "@fortawesome/fontawesome-svg-core";
 import Link from "next/link";
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faApple } from "@fortawesome/free-brands-svg-icons";
+import { faAndroid } from "@fortawesome/free-brands-svg-icons";
 
 
 function Header() {
@@ -29,15 +32,18 @@ function Header() {
               <li className="menu_li">NEWS</li>
             </Link>
             <div className="menu_icon">
-              <FontAwesomeIcon icon="instagram" />
-              <FontAwesomeIcon icon="apple" />
-              <FontAwesomeIcon icon="android" />
+              {/* <FontAwesomeIcon icon={faInstagram} className="icon fa fa-brands"/>
+              <FontAwesomeIcon icon={faApple} className="icon fa fa-brands" />
+              <FontAwesomeIcon icon={faAndroid} className="icon fa fa-brands" /> */}
+              <Link  href="/news" className="icon"><FontAwesomeIcon icon={faInstagram} className="icon fa fa-brands"/></Link>
+              <Link  href="/news" className="icon"><FontAwesomeIcon icon={faApple} className="icon fa fa-brands" /></Link>
+              <Link  href="/news" className="icon"><FontAwesomeIcon icon={faAndroid} className="icon fa fa-brands" /></Link>
             </div>
           </ul>
         </div>
         <div className="ham_menu">
           <a href="" className="icon">
-            <FontAwesomeIcon icon="fa fa-thin fa-bars" />
+            <FontAwesomeIcon icon="fa fa-thin fa-bars"  className="fa-bars" />
           </a>
         </div>
       </div>
