@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React from "react";
-import FA from "react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+
 
 function Header() {
   return (
@@ -27,15 +29,15 @@ function Header() {
               <li className="menu_li">NEWS</li>
             </Link>
             <div className="menu_icon">
-              <FA name="instagram" />
-              <FA name="apple" />
-              <FA name="android" />
+              <FontAwesomeIcon icon="instagram" />
+              <FontAwesomeIcon icon="apple" />
+              <FontAwesomeIcon icon="android" />
             </div>
           </ul>
         </div>
         <div className="ham_menu">
           <a href="" className="icon">
-            <i className="fa fa-thin fa-bars"></i>
+            <FontAwesomeIcon icon="fa fa-thin fa-bars" />
           </a>
         </div>
       </div>
