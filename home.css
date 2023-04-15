@@ -21,7 +21,6 @@ video {
     filter: brightness(80%);
 }
 .main{
-    position: relative;
     width: 80%;
     height: 100%;
     margin: 0 auto;
@@ -80,13 +79,11 @@ video {
 }
 .main_short{
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 7.5%;
+    right: 0;
+    /* transform: translate(-50%, -50%); */
     width: 700px;
     height: 100px;
-    padding: 28px;
-    box-sizing: border-box;
     background-color: rgba(0,0,0,.3);
     display: flex;
     justify-content: space-around;
@@ -95,6 +92,8 @@ video {
 .m_short_box{
     width: calc(100% / 3);
     height: 100%;
+    padding: 28px;
+    box-sizing: border-box;
 }
 .short_title{
     font-size: 12px;

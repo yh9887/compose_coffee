@@ -40,20 +40,20 @@ export default function Home() {
 
           </div>
           <div className="main_short">
-            <Link href={"https://www.instagram.com/compose_coffee/"} className="m_short_box b_r">
-              <div className="short_link">
+            <Link href={"https://www.instagram.com/compose_coffee/"} >
+              <div className="short_link m_short_box b_r">
                 <p className="short_title">SOCIAL NETWORK</p>
                 <p className="short_name">SNS</p>
               </div>
             </Link>
-            <Link href={"https://composecoffee.com/"} className="m_short_box b_r">
-              <div className="short_link">
+            <Link href={"https://composecoffee.com/"} >
+              <div className="short_link m_short_box b_r">
                 <p className="short_title">COMPOSE MALL</p>
                 <p className="short_name">e-Shop</p>
               </div>
             </Link>
-            <Link href={"mailto:compose@composecoffee.com <compose@composecoffee.com>;"} className="m_short_box b_r">
-              <div className="short_link">
+            <Link href={"mailto:compose@composecoffee.com <compose@composecoffee.com>;"} >
+              <div className="short_link m_short_box">
                 <p className="short_title">CONTACT</p>
                 <p className="short_name">CONTACT</p>
               </div>
