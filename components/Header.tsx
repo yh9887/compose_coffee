@@ -1,6 +1,7 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import Link from "next/link";
 import React from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faApple } from "@fortawesome/free-brands-svg-icons";
@@ -9,8 +10,15 @@ import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 
 
 function Header() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const updateScroll = () => {
+      setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  }
+  useEffect(()=>{
+      window.addEventListener('scroll', updateScroll);
+  });
   return (
-    <div className="header">
+    <div className={scrollPosition < 100 ? "original_header  header" : "change_header header drop"}>
       <div className="header_wrap">
         <Link href="/">
           <img src="./img/logo-light.svg" alt="" className="logo" />
@@ -18,30 +26,30 @@ function Header() {
         <div className="header_menu">
           <ul className="menu_ul">
             <Link href="/brand">
-              <li className="menu_li">BRAND</li>
+              <li className={scrollPosition < 100 ? "menu_li" :"menu_li change_menu_li"}>BRAND</li>
             </Link>
             <Link href="/#">
-              <li className="menu_li">FRANCHISE</li>
+              <li className={scrollPosition < 100 ? "menu_li" :"menu_li change_menu_li"}>FRANCHISE</li>
             </Link>
             <Link href="/menu">
-              <li className="menu_li">MENU</li>
+              <li className={scrollPosition < 100 ? "menu_li" :"menu_li change_menu_li"}>MENU</li>
             </Link>
             <Link href="/#">
-              <li className="menu_li">STORE</li>
+              <li className={scrollPosition < 100 ? "menu_li" :"menu_li change_menu_li"}>STORE</li>
             </Link>
             <Link href="/news">
-              <li className="menu_li">NEWS</li>
+              <li className={scrollPosition < 100 ? "menu_li" :"menu_li change_menu_li"}>NEWS</li>
             </Link>
             <div className="menu_icon">
-                <Link  href="/news" className="icon"><FontAwesomeIcon icon={faInstagram} className="icon fa fa-brands"/></Link>
-                <Link  href="/news" className="icon"><FontAwesomeIcon icon={faApple} className="icon fa fa-brands" /></Link>
-                <Link  href="/news" className="icon"><FontAwesomeIcon icon={faAndroid} className="icon fa fa-brands" /></Link>
+                <Link  href="/news" className="icon"><FontAwesomeIcon icon={faInstagram} className={scrollPosition < 100 ? "icon fa fa-brands" :"fa-brands change_menu_li"}/></Link>
+                <Link  href="/news" className="icon"><FontAwesomeIcon icon={faApple}  className={scrollPosition < 100 ? "icon fa fa-brands" :"fa-brands change_menu_li"} /></Link>
+                <Link  href="/news" className="icon"><FontAwesomeIcon icon={faAndroid}  className={scrollPosition < 100 ? "icon fa fa-brands" :"fa-brands change_menu_li"} /></Link>
             </div>
           </ul>
         </div>
         <div className="ham_menu">
           <a href="" className="icon">
-            <FontAwesomeIcon icon={faBarsStaggered} className="fa-bars" />
+            <FontAwesomeIcon icon={faBarsStaggered} className={scrollPosition < 100 ? "icon fa fa-bars" :"fa-bars change_menu_li"} />
           </a>
         </div>
       </div>

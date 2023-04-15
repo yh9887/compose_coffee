@@ -275,3 +275,9 @@ svg{font-size: 23px;}
 .h-800 {
   height: 800px;
 }
+.change_header{
+  background-color: white;
+}
+.change_menu_li{
+  color:black;
+}
