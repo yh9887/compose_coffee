@@ -177,7 +177,6 @@ font-size: 40px;
 .store_place_wrap{
     width: 85%;
     height: 250px;
-    background-color: pink;
     margin: 70px auto;
     display: flex;
     gap: 20px;
@@ -185,5 +184,15 @@ font-size: 40px;
 .place_box{
     width: calc(100% / 4);
     height: 100%;
-    background-color: darkblue;
+    position: relative;
+}
+.place_txt{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background-color: rgba(0,0,0,.8);
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
 }

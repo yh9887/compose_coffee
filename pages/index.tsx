@@ -86,19 +86,19 @@ export default function Home() {
           <div className="store_place_wrap">
             <div className="place_box">
               <img src="../img/home/store_banner1.jpg"className="place_img"></img>
-              <div className="place_txt"></div>
+              <div className="place_txt">서귀포신시가지점</div>
             </div>
             <div className="place_box">
               <img src="../img/home/store_banner2.jpg"className="place_img"></img>
-              <div className="place_txt"></div>
+              <div className="place_txt">하남감일지구점</div>
             </div>
             <div className="place_box">
               <img src="../img/home/store_banner3.jpg"className="place_img"></img>
-              <div className="place_txt"></div>
+              <div className="place_txt">원주중앙점</div>
             </div>
             <div className="place_box">
               <img src="../img/home/store_banner4.jpg"className="place_img"></img>
-              <div className="place_txt"></div>
+              <div className="place_txt">안산일동점</div>
             </div>
           </div>
         </div>
