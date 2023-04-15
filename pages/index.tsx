@@ -1,5 +1,9 @@
 import Header from "@components/Header";
 import Footer from "@components/Footer";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
 import Link from "next/link";
 
 export default function Home() {
@@ -64,7 +68,12 @@ export default function Home() {
           </div>
           <div className="section2">
             <div className="img_slide">
-              <img src="./img/home/main_swiper1" alt="" />
+              <div className="slide_btn prevBtn"><FontAwesomeIcon icon={faChevronLeft}/></div>
+                <img src="../img/home/main_swiper1.jpg" alt="" className="slide_banner"/>
+                <img src="../img/home/main_swiper2.jpg" alt="" className="slide_banner"/>
+                <img src="../img/home/main_swiper3.jpg" alt="" className="slide_banner"/>
+                <img src="../img/home/main_swiper4.jpg" alt="" className="slide_banner"/>
+              <div className="slide_btn nextBtn"><FontAwesomeIcon icon={faChevronRight} /></div>
             </div>
           </div>
         </div>

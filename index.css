@@ -34,7 +34,10 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
-  /* overflow-x: hidden; */
+}
+body{
+  overflow-x: hidden;
+
 }
 
 a {
@@ -280,4 +283,5 @@ svg{font-size: 23px;}
 }
 .change_menu_li{
   color:black;
+  cursor: pointer;
 }
