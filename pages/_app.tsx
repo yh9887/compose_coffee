@@ -3,6 +3,8 @@ import "../index.css";
 import "../info.css";
 import "../menu.css";
 import "../news.css";
+import "../home.css";
+
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import { useState } from "react";
 import { RecoilRoot } from "recoil";

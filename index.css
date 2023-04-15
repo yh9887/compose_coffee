@@ -42,32 +42,6 @@ a {
   color: black;
 }
 
-::-webkit-scrollbar {
-  /* display: none; */
-}
-
-.video_wrap {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-video {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  min-width: 1920px;
-  min-height: 100vh;
-  pointer-events: none;
-  transform: scale(1.2);
-  text-align: center;
-  -webkit-transform: translate(-50%, 0) scale(1.2);
-  transform: translate(-50%, 0) scale(1.2);
-  filter: brightness(80%);
-}
 
 .wrap {
   width: 100%;
@@ -118,6 +92,7 @@ video {
 .logo {
   width: 250px;
   height: 100%;
+  cursor: pointer;
 }
 .header_active {
   transform: translateY(-100%);
@@ -140,6 +115,7 @@ video {
   margin-right: 90px;
   font-size: 17px;
   color: white;
+  cursor: pointer;
 }
 
 .menu_li:hover {
@@ -159,6 +135,7 @@ video {
 .icon {
   color: white;
   line-height: 98px;
+  cursor: pointer;
 }
 .fa-brands:hover,
 .fa-bars:hover {
