@@ -83,22 +83,36 @@ export default function Home() {
             <p className="store_sub_title">늘 가까이 함께하겠습니다.</p>
             <button className="store_search_btn">가까운 매장 찾기</button>
           </div>
-          <div className="store_place_wrap">
-            <div className="place_box">
-              <img src="../img/home/store_banner1.jpg"className="place_img"></img>
+          <div className="store_place_box">
+            <div className="place_box_wrap">
+              <img src="../img/home/store_place_banner1.jpg"></img>
               <div className="place_txt">서귀포신시가지점</div>
             </div>
-            <div className="place_box">
-              <img src="../img/home/store_banner2.jpg"className="place_img"></img>
+            <div className="place_box_wrap">
+              <img src="../img/home/store_place_banner2.jpg"></img>
               <div className="place_txt">하남감일지구점</div>
             </div>
-            <div className="place_box">
-              <img src="../img/home/store_banner3.jpg"className="place_img"></img>
+            <div className="place_box_wrap">
+              <img src="../img/home/store_place_banner3.jpg"></img>
               <div className="place_txt">원주중앙점</div>
             </div>
-            <div className="place_box">
-              <img src="../img/home/store_banner4.jpg"className="place_img"></img>
+            <div className="place_box_wrap">
+              <img src="../img/home/store_place_banner4.jpg"></img>
               <div className="place_txt">안산일동점</div>
+            </div>
+          </div>
+          <div className="store_place_img">
+            <div className="place_img_wrap">
+              <div className="img_wrap">
+                <div className="place_img place_img1">
+                  <div className="img_title_box">
+                    <p className="img_main_title">고품질 커피브랜드, 컴포즈</p>
+                    <div className="img_main_border"></div>
+                    <div className="img_sub_title">성공창업, 컴포즈커피가 함께합니다.</div>
+                    <button className="img_about_btn">+ 더보기</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
