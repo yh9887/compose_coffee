@@ -102,17 +102,71 @@ export default function Home() {
             </div>
           </div>
           <div className="store_place_img">
-            <div className="place_img_wrap">
-              <div className="img_wrap">
-                <div className="place_img place_img1">
-                  <div className="img_title_box">
+            <div className="place_img_wrap1">
+                <div className="place_img1">
+                  <div className="img1_title_box">
                     <p className="img_main_title">고품질 커피브랜드, 컴포즈</p>
                     <div className="img_main_border"></div>
                     <div className="img_sub_title">성공창업, 컴포즈커피가 함께합니다.</div>
                     <button className="img_about_btn">+ 더보기</button>
                   </div>
                 </div>
+            </div>
+            <div className="place_img_wrap2">
+              <div className="img_wrap_box_L">
+                <div className="place_img2_1">
+                  <div className="img2_title_box_L">
+                    <p className="img_sub_title_t">1999년부터 시작된 전문성</p>
+                    <p className="img_sub_title_b">20년 이상의 노하우와 첨단 기술력!</p>
+                  </div>
+                </div>
               </div>
+              <div className="img_wrap_box_R">
+                <div className="place_img2_2">
+                  <div className="img2_title_box_R">
+                    <p className="img_sub_title_t">생두 수입부터 로스팅까지</p>
+                    <p className="img_sub_title_b">국내 최대 규모 자체 로스팅 공장 및 설비 보유!</p>
+                  </div>
+                </div>
+                <div className="place_img2_3">
+                  <div className="img2_title_box_R">
+                    <p className="img_sub_title_t">이탈리아 100년 전통의 명맥</p>
+                    <p className="img_sub_title_b">브루그네띠 공식 수입 AGENCY</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="place_img_wrap3">
+                <div className="place_img3">
+                <div className="img3_title_box">
+                    <p className="img_main_title">공지사항</p>
+                    <div className="img_main_border"></div>
+                    <div className="img_sub_title">컴포즈 소식을 전해드립니다.</div>
+                    <div className="img_sub_box">
+                      <div className="sub_box">
+                        <p className="sub_box_title">2023 신메뉴 개편 </p>
+                        <p className="sub_box_content">컴포즈커피를 사랑해주시는 고객님들께 감사드립니다.</p>
+                        <p className="sub_box_date">2023.03.27</p>
+                      </div>
+                      <div className="sub_box">
+                        <p className="sub_box_title">2023 신메뉴 개편 </p>
+                        <p className="sub_box_content">컴포즈커피를 사랑해주시는 고객님들께 감사드립니다.</p>
+                        <p className="sub_box_date">2023.03.27</p>
+                      </div>
+                      <div className="sub_box">
+                        <p className="sub_box_title">2023 신메뉴 개편 </p>
+                        <p className="sub_box_content">컴포즈커피를 사랑해주시는 고객님들께 감사드립니다.</p>
+                        <p className="sub_box_date">2023.03.27</p>
+                      </div>
+                      <div className="sub_box">
+                        <p className="sub_box_title">2023 신메뉴 개편 </p>
+                        <p className="sub_box_content">컴포즈커피를 사랑해주시는 고객님들께 감사드립니다.</p>
+                        <p className="sub_box_date">2023.03.27</p>
+                      </div>
+                    </div>
+                    <button className="img_about_btn">+ 더보기</button>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
