@@ -28,7 +28,7 @@ function Header() {
             <Link href="/brand">
               <li className={scrollPosition < 100 ? "menu_li" :"menu_li change_menu_li"}>BRAND</li>
             </Link>
-            <Link href="/#">
+            <Link href="/franchise">
               <li className={scrollPosition < 100 ? "menu_li" :"menu_li change_menu_li"}>FRANCHISE</li>
             </Link>
             <Link href="/menu">

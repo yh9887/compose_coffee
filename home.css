@@ -325,14 +325,17 @@ font-size: 40px;
 }
 .sub_box{
     width: calc(100%/4);
-    background-color: white;
-    opacity: 0.6;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
     padding: 25px;
     box-sizing: border-box;
 }
 .sub_box_title{
     color: black;
     font-size:  18px;
+}
+.sub_box_title:hover{
+    color: #fed900!important;
 }
 .sub_box_content, .sub_box_date{
     color: #555;

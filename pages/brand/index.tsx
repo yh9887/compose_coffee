@@ -36,7 +36,7 @@ function Brand() {
                 </a>
               </div>
             </div>
-            <div className="about">
+            <div className="nav_menu">
               <div className="top_menu">
                 <span>ABOUT US</span>
                 <i className="fa fa-light fa-angle-down"></i>
