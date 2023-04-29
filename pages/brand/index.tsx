@@ -1,5 +1,8 @@
-import Header from "@components/Header";
+  import Header from "@components/Header";
 import Footer from "@components/Footer";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
 
 function Brand() {
   return (
@@ -11,12 +14,12 @@ function Brand() {
           <h1 className="sec1_title">BRAND</h1>
           <div className="nav">
             <div className="home">
-              <i className="fa fa-home" aria-hidden="true"></i>
+            <FontAwesomeIcon icon={faHouseChimney} className={"fa-solid fa-house-chimney "} />
             </div>
             <div className="nav_menu">
               <div className="top_menu">
                 <span>BRAND</span>
-                <i className="fa fa-light fa-angle-down"></i>
+            <FontAwesomeIcon icon={faAngleDown} className={"fa-sharp fa-solid fa-angle-down"} />
               </div>
               <div className="down_menu">
                 <a href="">
@@ -39,7 +42,8 @@ function Brand() {
             <div className="nav_menu">
               <div className="top_menu">
                 <span>ABOUT US</span>
-                <i className="fa fa-light fa-angle-down"></i>
+                <FontAwesomeIcon icon={faAngleDown} className={"fa-sharp fa-solid fa-angle-down"} />
+
               </div>
               <div className="down_menu">
                 <a href="">
@@ -52,6 +56,8 @@ function Brand() {
             </div>
           </div>
         </div>
+        
+
         <div className="sec2">
           <div className="sec2_sub1">
             <p className="bold">커피를잘아는</p>

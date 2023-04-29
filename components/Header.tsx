@@ -34,7 +34,7 @@ function Header() {
             <Link href="/menu">
               <li className={scrollPosition < 100 ? "menu_li" :"menu_li change_menu_li"}>MENU</li>
             </Link>
-            <Link href="/#">
+            <Link href="/store">
               <li className={scrollPosition < 100 ? "menu_li" :"menu_li change_menu_li"}>STORE</li>
             </Link>
             <Link href="/news">

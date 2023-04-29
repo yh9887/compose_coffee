@@ -1,6 +1,9 @@
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
 
 function News() {
   // const news = localStorage.getItem("NEWS");
@@ -15,12 +18,14 @@ function News() {
           </Link>
           <div className="nav">
             <div className="home">
-              <i className="fa fa-home" aria-hidden="true"></i>
+            <FontAwesomeIcon icon={faHouseChimney} className={"fa-solid fa-house-chimney "} />
+
             </div>
             <div className="nav_menu">
               <div className="top_menu">
                 <span>NEWS</span>
-                <i className="fa fa-light fa-angle-down"></i>
+                <FontAwesomeIcon icon={faAngleDown} className={"fa-sharp fa-solid fa-angle-down"} />
+
               </div>
               <div className="down_menu">
                 <a href="">
@@ -43,7 +48,8 @@ function News() {
             <div className="about">
               <div className="top_menu">
                 <span>공지사항</span>
-                <i className="fa fa-light fa-angle-down"></i>
+                <FontAwesomeIcon icon={faAngleDown} className={"fa-sharp fa-solid fa-angle-down"} />
+
               </div>
               <div className="down_menu">
                 <a href="">

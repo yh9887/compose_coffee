@@ -2,23 +2,29 @@ import Header from "@components/Header";
 import Footer from "@components/Footer";
 import Franchise_content from "@components/Franchise_content";
 import Franchise_choise from "@components/Franchise_choise";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
+                
+
 function franchise() {
     return (
         <>
             <div className="wrap">
                 <Header />
                 <div className="main">
+                    {/* <Banner name1={`FRANCHISE`} name2={`가맹절차`} src={"./img/franchise/banner.jpg"}/> */}
                     <div className="sec1">
                         <img src="../img/franchise/banner.jpg" alt="" />
                         <h1 className="sec1_title">FRANCHISE</h1>
                         <div className="nav">
                             <div className="home">
-                                <i className="fa fa-home" aria-hidden="true"></i>
+                            <FontAwesomeIcon icon={faHouseChimney} className={"fa-solid fa-house-chimney "} />
                             </div>
                             <div className="nav_menu">
                                 <div className="top_menu">
                                     <span>FRNACHISE</span>
-                                    <i className="fa fa-light fa-angle-down"></i>
+                                    <FontAwesomeIcon icon={faAngleDown} className={"fa-sharp fa-solid fa-angle-down"} />
                                 </div>
                                 <div className="down_menu">
                                     <a href="">
@@ -41,7 +47,18 @@ function franchise() {
                             <div className="nav_menu">
                                 <div className="top_menu">
                                     <span>가맹절차</span>
-                                    <i className="fa fa-light fa-angle-down"></i>
+                                    <FontAwesomeIcon icon={faAngleDown} className={"fa-sharp fa-solid fa-angle-down"} />
+                                </div>
+                                <div className="down_menu">
+                                    <a href="">
+                                        <p>가맹절차</p>
+                                    </a>
+                                    <a href="">
+                                        <p>인테리어</p>
+                                    </a>
+                                    <a href="">
+                                        <p>가맹문의</p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +107,6 @@ function franchise() {
                                 txt_title={"정관제일점"}/>
                         </div>
                     </div>
-
                 </div>
                 <Footer />
             </div>

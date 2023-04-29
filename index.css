@@ -206,12 +206,15 @@ svg{font-size: 23px;}
   height: 50px;
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 15px;
+  padding: 13.5px;
   box-sizing: border-box;
   float: left;
   text-align: center;
   color: #999;
   cursor: pointer;
+}
+.fa-house-chimney{
+  width: 18px;
 }
 
 .nav_menu,
