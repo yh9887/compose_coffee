@@ -3,10 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "npx prisma generate && next dev",
+    "build": "npx prisma generate && next build",
+    "start": "npx prisma generate && next start",
+    "deploy": "yarn build && serverless --debug",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test dev http://localhost:3000 cypress",
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless",
+    "db:migration": "dotenv -e .env -- yarn prisma migrate dev --create-only",
+    "db:migrate": "dotenv -e .env -- yarn prisma migrate dev",
+    "db:seed": "dotenv -e .env -- yarn prisma db seed",
+    "db:studio": "dotenv -e .env -- yarn prisma studio"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
@@ -15,10 +23,12 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@prisma/client": "^3.7.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
     "babel-plugin-macros": "^3.1.0",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
@@ -30,10 +40,12 @@
     "react-player": "^2.12.0",
     "react-query": "^3.39.3",
     "recoil": "^0.7.7",
+    "dotenv-cli": "^4.1.1",
     "tailwindcss": "3.3.1",
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@types/react-fontawesome": "^1.6.5"
+    "@types/react-fontawesome": "^1.6.5",
+    "prisma": "^3.7.0"
   }
 }
