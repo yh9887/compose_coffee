@@ -5,6 +5,7 @@ import Franchise_choise from "@components/Franchise_choise";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
+import DownMenu from "@components/Down_menu";
 
 function franchise() {
   const FranchiseContents = [
@@ -85,23 +86,7 @@ function franchise() {
                     className={"fa-sharp fa-solid fa-angle-down"}
                   />
                 </div>
-                <div className="down_menu">
-                  <a href="">
-                    <p>BRAND</p>
-                  </a>
-                  <a href="">
-                    <p>FRANCHISE</p>
-                  </a>
-                  <a href="">
-                    <p>MENU</p>
-                  </a>
-                  <a href="">
-                    <p>STORE</p>
-                  </a>
-                  <a href="">
-                    <p>NEWS</p>
-                  </a>
-                </div>
+                <DownMenu />
               </div>
               <div className="nav_menu">
                 <div className="top_menu">

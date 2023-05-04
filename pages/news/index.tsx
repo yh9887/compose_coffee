@@ -1,9 +1,10 @@
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import Link from "next/link";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
+import DownMenu from "@components/Down_menu";
 
 function News() {
   // const news = localStorage.getItem("NEWS");
@@ -18,50 +19,30 @@ function News() {
           </Link>
           <div className="nav">
             <div className="home">
-            <FontAwesomeIcon icon={faHouseChimney} className={"fa-solid fa-house-chimney "} />
-
+              <FontAwesomeIcon
+                icon={faHouseChimney}
+                className={"fa-solid fa-house-chimney "}
+              />
             </div>
             <div className="nav_menu">
               <div className="top_menu">
                 <span>NEWS</span>
-                <FontAwesomeIcon icon={faAngleDown} className={"fa-sharp fa-solid fa-angle-down"} />
-
+                <FontAwesomeIcon
+                  icon={faAngleDown}
+                  className={"fa-sharp fa-solid fa-angle-down"}
+                />
               </div>
-              <div className="down_menu">
-                <a href="">
-                  <p>BRAND</p>
-                </a>
-                <a href="">
-                  <p>FRANCHISE</p>
-                </a>
-                <a href="">
-                  <p>MENU</p>
-                </a>
-                <a href="">
-                  <p>STORE</p>
-                </a>
-                <a href="">
-                  <p>NEWS</p>
-                </a>
-              </div>
+              <DownMenu />
             </div>
             <div className="about">
               <div className="top_menu">
                 <span>공지사항</span>
-                <FontAwesomeIcon icon={faAngleDown} className={"fa-sharp fa-solid fa-angle-down"} />
-
+                <FontAwesomeIcon
+                  icon={faAngleDown}
+                  className={"fa-sharp fa-solid fa-angle-down"}
+                />
               </div>
-              <div className="down_menu">
-                <a href="">
-                  <p>공지사항</p>
-                </a>
-                <a href="">
-                  <p>NEWS</p>
-                </a>
-                <a href="">
-                  <p>EVENTS</p>
-                </a>
-              </div>
+              <DownMenu pageName="news" />
             </div>
           </div>
         </div>
@@ -78,14 +59,14 @@ function News() {
               </tr>
             </thead>
             <tbody id="tbody">
-            <tr>
+              <tr>
                 <th>01</th>
                 <th>테스트</th>
                 <th>컴포즈</th>
                 <th>2023.05.04</th>
                 <th>0</th>
               </tr>
-            <tr>
+              <tr>
                 <th>01</th>
                 <th>테스트</th>
                 <th>컴포즈</th>
@@ -94,7 +75,6 @@ function News() {
               </tr>
             </tbody>
           </table>
-          
         </div>
       </div>
       <Footer />

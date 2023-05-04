@@ -1,10 +1,23 @@
 import Header from "@components/Header";
 import Footer from "@components/Footer";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import DownMenu from "@components/Down_menu";
 
 function Menu() {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get("/api/items");
+      setItems(response.data);
+    }
+    fetchData();
+  }, []);
+
   return (
     <>
       <div className="wrap">
@@ -15,31 +28,20 @@ function Menu() {
             <h1 className="sec1_title">MENU</h1>
             <div className="nav">
               <div className="home">
-              <FontAwesomeIcon icon={faHouseChimney} className={"fa-solid fa-house-chimney "} />
+                <FontAwesomeIcon
+                  icon={faHouseChimney}
+                  className={"fa-solid fa-house-chimney "}
+                />
               </div>
               <div className="nav_menu">
                 <div className="top_menu">
                   <span>MENU</span>
-                  <FontAwesomeIcon icon={faAngleDown} className={"fa-sharp fa-solid fa-angle-down"} />
-
+                  <FontAwesomeIcon
+                    icon={faAngleDown}
+                    className={"fa-sharp fa-solid fa-angle-down"}
+                  />
                 </div>
-                <div className="down_menu">
-                  <a href="">
-                    <p>BRAND</p>
-                  </a>
-                  <a href="">
-                    <p>FRANCHISE</p>
-                  </a>
-                  <a href="">
-                    <p>MENU</p>
-                  </a>
-                  <a href="">
-                    <p>STORE</p>
-                  </a>
-                  <a href="">
-                    <p>NEWS</p>
-                  </a>
-                </div>
+                <DownMenu />
               </div>
             </div>
           </div>
@@ -60,19 +62,16 @@ function Menu() {
               </ul>
             </div>
             <div className="menu_content">
-              <div className="menu_box">
-                <img id="menu_img" src="../img/menu/menu.jpg" alt="" />
-                <div id="menu_info">
-                  <h4>에스프레소</h4>
-                  <div className="line"></div>
-                  <ul>
-                    <li>샷추가 : 1shot : 104mg/30ml</li>
-                    <li>샷추가 : 1shot : 104mg/30ml</li>
-                    <li>샷추가 : 1shot : 104mg/30ml</li>
-                    <li>샷추가 : 1shot : 104mg/30ml</li>
-                  </ul>
+              {items.map((item) => (
+                <div key={item.id} className="menu_box">
+                  <img id="menu_img" src="../img/menu/menu.jpg" alt="" />
+                  <div id="menu_info">
+                    <h4>{item.title}</h4>
+                    <div className="line"></div>
+                    <div>{item.description || "설명이 없습니다."}</div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

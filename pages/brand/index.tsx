@@ -1,8 +1,9 @@
-  import Header from "@components/Header";
+import Header from "@components/Header";
 import Footer from "@components/Footer";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
+import DownMenu from "@components/Down_menu";
 
 function Brand() {
   return (
@@ -14,49 +15,33 @@ function Brand() {
           <h1 className="sec1_title">BRAND</h1>
           <div className="nav">
             <div className="home">
-            <FontAwesomeIcon icon={faHouseChimney} className={"fa-solid fa-house-chimney "} />
+              <FontAwesomeIcon
+                icon={faHouseChimney}
+                className={"fa-solid fa-house-chimney "}
+              />
             </div>
             <div className="nav_menu">
               <div className="top_menu">
                 <span>BRAND</span>
-            <FontAwesomeIcon icon={faAngleDown} className={"fa-sharp fa-solid fa-angle-down"} />
+                <FontAwesomeIcon
+                  icon={faAngleDown}
+                  className={"fa-sharp fa-solid fa-angle-down"}
+                />
               </div>
-              <div className="down_menu">
-                <a href="">
-                  <p>BRAND</p>
-                </a>
-                <a href="">
-                  <p>FRANCHISE</p>
-                </a>
-                <a href="">
-                  <p>MENU</p>
-                </a>
-                <a href="">
-                  <p>STORE</p>
-                </a>
-                <a href="">
-                  <p>NEWS</p>
-                </a>
-              </div>
+              <DownMenu />
             </div>
             <div className="nav_menu">
               <div className="top_menu">
                 <span>ABOUT US</span>
-                <FontAwesomeIcon icon={faAngleDown} className={"fa-sharp fa-solid fa-angle-down"} />
-
+                <FontAwesomeIcon
+                  icon={faAngleDown}
+                  className={"fa-sharp fa-solid fa-angle-down"}
+                />
               </div>
-              <div className="down_menu">
-                <a href="">
-                  <p>ABOUT US</p>
-                </a>
-                <a href="">
-                  <p>버터홀릭</p>
-                </a>
-              </div>
+              <DownMenu pageName="brand" />
             </div>
           </div>
         </div>
-        
 
         <div className="sec2">
           <div className="sec2_sub1">
