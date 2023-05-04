@@ -7,6 +7,18 @@ tr{height: 40px;}
         cursor: pointer;
     }
 thead{background-color: rgb(226, 225, 225);}
+th{
+    width: 5%;
+    height:45px;
+    font-size: 13px;
+    font-family: 'IBM Plex Sans KR';;
+}
+th:nth-child(2){
+    width: 30%;
+}
+tbody tr th{
+    border-bottom: 1px solid #a3a3a365;
+}
 .contents{
     text-align: left;
 }

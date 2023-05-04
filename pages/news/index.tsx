@@ -71,14 +71,30 @@ function News() {
             <thead>
               <tr>
                 <th>번호</th>
-                <th className="w-50">제목</th>
+                <th>제목</th>
                 <th>글쓴이</th>
                 <th>날짜</th>
                 <th>조회 수</th>
               </tr>
             </thead>
-            <tbody id="tbody"></tbody>
+            <tbody id="tbody">
+            <tr>
+                <th>01</th>
+                <th>테스트</th>
+                <th>컴포즈</th>
+                <th>2023.05.04</th>
+                <th>0</th>
+              </tr>
+            <tr>
+                <th>01</th>
+                <th>테스트</th>
+                <th>컴포즈</th>
+                <th>2023.05.04</th>
+                <th>0</th>
+              </tr>
+            </tbody>
           </table>
+          
         </div>
       </div>
       <Footer />
