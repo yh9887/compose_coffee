@@ -1,25 +1,31 @@
 
+table {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+    border-collapse : collapse 
+}
+tbody tr:hover{
+   background-color: rgb(226, 225, 225);
+}
+thead{background-color: rgb(192, 192, 192);}
 tr{height: 40px;}
-    table {
-        width: 80%;
-        margin: 0 auto;
-        text-align: center;
-        cursor: pointer;
-    }
-thead{background-color: rgb(226, 225, 225);}
 th{
     width: 5%;
     height:45px;
     font-size: 13px;
     font-family: 'IBM Plex Sans KR';;
+    
 }
 th:nth-child(2){
     width: 30%;
 }
 tbody tr th{
     border-bottom: 1px solid #a3a3a365;
+    box-sizing: border-box;
 }
 .contents{
     text-align: left;
+    padding: 0 20px;
 }
-p{margin: 0;}

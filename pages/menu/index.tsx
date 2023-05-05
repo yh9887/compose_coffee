@@ -68,7 +68,7 @@ function Menu() {
                   <div id="menu_info">
                     <h4>{item.title}</h4>
                     <div className="line"></div>
-                    <div>{item.description || "설명이 없습니다."}</div>
+                    <div>{item.description || ""}</div>
                   </div>
                 </div>
               ))}

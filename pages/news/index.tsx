@@ -5,9 +5,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
 import DownMenu from "@components/Down_menu";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function News() {
-  // const news = localStorage.getItem("NEWS");
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get("/api/notices");
+      setItems(response.data);
+    }
+    fetchData();
+  }, []);
+
   return (
     <>
       <Header />
@@ -59,21 +70,17 @@ function News() {
               </tr>
             </thead>
             <tbody id="tbody">
+            {items.map((item) => (
               <tr>
-                <th>01</th>
-                <th>테스트</th>
-                <th>컴포즈</th>
-                <th>2023.05.04</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>01</th>
-                <th>테스트</th>
-                <th>컴포즈</th>
-                <th>2023.05.04</th>
-                <th>0</th>
-              </tr>
+              <th>{item.id}</th>
+              <th className="contents">{item.title}</th>
+              <th>컴포즈</th>
+              <th>{item.createdAt}</th>
+              <th>{item.viewCount}</th>
+            </tr>
+              ))}
             </tbody>
+
           </table>
         </div>
       </div>
