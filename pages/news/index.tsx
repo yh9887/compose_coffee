@@ -70,17 +70,18 @@ function News() {
               </tr>
             </thead>
             <tbody id="tbody">
-            {items.map((item) => (
-              <tr>
-              <th>{item.id}</th>
-              <th className="contents">{item.title}</th>
-              <th>컴포즈</th>
-              <th>{item.createdAt}</th>
-              <th>{item.viewCount}</th>
-            </tr>
+              {items.map((item) => (
+                <Link key={item.id} href={`/news/${item.id}`}>
+                  <tr>
+                    <th>{item.id}</th>
+                    <th className="contents">{item.title}</th>
+                    <th>컴포즈</th>
+                    <th>{item.createdAt}</th>
+                    <th>{item.viewCount}</th>
+                  </tr>
+                </Link>
               ))}
             </tbody>
-
           </table>
         </div>
       </div>

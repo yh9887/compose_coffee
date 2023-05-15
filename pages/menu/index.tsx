@@ -6,6 +6,7 @@ import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import DownMenu from "@components/Down_menu";
+import Link from "next/link";
 
 function Menu() {
   const [items, setItems] = useState([]);
@@ -75,6 +76,9 @@ function Menu() {
             </div>
           </div>
         </div>
+        <Link href="/menu/new">
+          <button>상품등록</button>
+        </Link>
         <Footer />
       </div>
     </>
