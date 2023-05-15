@@ -3,10 +3,19 @@ import Footer from "@components/Footer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper";
 
 import Link from "next/link";
 
 export default function Home() {
+  const items = [
+    { src: "../img/home/main_swiper1.jpg" },
+    { src: "../img/home/main_swiper2.jpg" },
+    { src: "../img/home/main_swiper3.jpg" },
+    { src: "../img/home/main_swiper4.jpg" },
+  ];
+
   return (
     <>
       <Header />
@@ -68,14 +77,33 @@ export default function Home() {
         </div>
         <div className="section2" id="imgSlide">
           <div className="img_slide">
-            <div className="slide_btn prevBtn"><FontAwesomeIcon icon={faChevronLeft} /></div>
-            <img src="../img/home/main_swiper1.jpg" alt="" className="slide_banner" />
-            <img src="../img/home/main_swiper2.jpg" alt="" className="slide_banner" />
-            <img src="../img/home/main_swiper3.jpg" alt="" className="slide_banner" />
-            <img src="../img/home/main_swiper4.jpg" alt="" className="slide_banner" />
-            <div className="slide_btn nextBtn"><FontAwesomeIcon icon={faChevronRight} /></div>
+          <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              // autoplay={true}
+              rewind={true}
+              pagination={{
+                clickable: true,
+              }}
+              loop={true}
+              slidesPerView={1}
+              navigation={{
+                prevEl: ".prevNav",
+                nextEl: ".nextNav",
+              }}
+          >
+            {/* <div className="slide_btn prevBtn"><FontAwesomeIcon icon={faChevronLeft} /></div> */}
+                  {items.map((item, idx) => {
+                      return (
+                        <SwiperSlide key={idx} className="slide_banner" >
+                            <button className="prevNav"></button>
+                          <img src={item.src} />
+                            <button className="nextNav"></button>
+                        </SwiperSlide> 
+                      );
+                  })}
+            {/* <div className="slide_btn nextBtn"><FontAwesomeIcon icon={faChevronRight} /></div> */}
+          </Swiper>
           </div>
-        </div>
         <div className="section3" id="store">
           <div className="store_title_box">
             <h1 className="store_main_title">컴포즈커피 가맹점</h1>
@@ -170,9 +198,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
-
+        </div>
+    </div>
       <Footer />
+    
     </>
   );
 }
