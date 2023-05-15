@@ -7,6 +7,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper";
 
 import Link from "next/link";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 export default function Home() {
   const items = [
@@ -81,17 +84,15 @@ export default function Home() {
               modules={[Navigation, Pagination, Autoplay]}
               // autoplay={true}
               rewind={true}
-              pagination={{
-                clickable: true,
-              }}
               loop={true}
               slidesPerView={1}
-              navigation={{
-                prevEl: ".prevNav",
-                nextEl: ".nextNav",
-              }}
+              navigation={true}
+              // navigation={{
+              //   prevEl: ".prevNav",
+              //   nextEl: ".nextNav",
+              // }}
           >
-            {/* <div className="slide_btn prevBtn"><FontAwesomeIcon icon={faChevronLeft} /></div> */}
+
                   {items.map((item, idx) => {
                       return (
                         <SwiperSlide key={idx} className="slide_banner" >
@@ -101,7 +102,6 @@ export default function Home() {
                         </SwiperSlide> 
                       );
                   })}
-            {/* <div className="slide_btn nextBtn"><FontAwesomeIcon icon={faChevronRight} /></div> */}
           </Swiper>
           </div>
         <div className="section3" id="store">
