@@ -29,3 +29,22 @@ tbody tr th{
     text-align: left;
     padding: 0 20px;
 }
+
+.notice_wrap{
+    width: 80%;
+    margin: 100px auto;
+}
+.notice_title{
+    font-weight: 100;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.notice_createdAt{
+    margin-right: 15px;
+}
+.notice_border{
+    width: 100%;
+    height: 1px;
+    border-bottom: 2px solid;
+    margin: 20px 0;
+}
