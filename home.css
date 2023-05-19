@@ -422,6 +422,7 @@ video {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .swiper-slide img {
@@ -432,4 +433,7 @@ video {
 }
 .swiper-button-prev, .swiper-button-next{
     color: white !important;
+}
+.swiper-slide, swiper-slide {
+    display: inherit !important;
 }

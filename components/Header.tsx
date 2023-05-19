@@ -21,7 +21,7 @@ function Header() {
     <div className={scrollPosition < 100 ? "original_header  header" : "change_header header drop"}>
       <div className="header_wrap">
         <Link href="/">
-          <img src="./img/logo-light.svg" alt="" className="logo" />
+          <img src="/img/logo-light.svg" alt="" className="logo" />
         </Link>
         <div className="header_menu">
           <ul className="menu_ul">

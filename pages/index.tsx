@@ -82,15 +82,11 @@ export default function Home() {
           <div className="img_slide">
           <Swiper
               modules={[Navigation, Pagination, Autoplay]}
-              // autoplay={true}
+              autoplay={true}
               rewind={true}
               loop={true}
               slidesPerView={1}
               navigation={true}
-              // navigation={{
-              //   prevEl: ".prevNav",
-              //   nextEl: ".nextNav",
-              // }}
           >
 
                   {items.map((item, idx) => {

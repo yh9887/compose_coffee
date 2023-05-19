@@ -84,3 +84,42 @@
     height: 0.3px;
     border-bottom: 1px solid #000000; 
 }
+.menu_list1,.menu_list2{
+    float: right;
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid #b1b1b16c;
+    color: #1c1c1caf;
+    cursor: pointer;
+    
+}
+.menu_list1{
+    margin-left: 10px;
+}
+.form{
+    margin: 100px auto;
+    text-align: left;
+    width: 500px;
+    /* height: 1000px; */
+    /* background-color: pink; */
+}
+select{margin-bottom: 20px;}
+.form_title{margin-bottom: 5px;}
+.form_input{
+    margin-bottom:20px;
+    width: 100%;
+}
+textarea{
+    width: 100%;
+    resize: vertical
+}
+.form_info{margin-bottom: 20px;}
+.form_button{
+    margin-top: 5px;
+    width: 40%;
+    height: 40px;
+}
