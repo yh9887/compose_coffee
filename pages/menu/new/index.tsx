@@ -27,6 +27,7 @@ function NewMenu() {
       description,
       categoryId: selectedCategory,
     });
+    console.log(selectedCategory, title, description,)
   };
 
   return (
