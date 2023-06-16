@@ -7,6 +7,7 @@ import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
 import DownMenu from "@components/Down_menu";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import moment from "moment";
 
 function NewsShow({ id }) {
   const [notice, setNotice] = useState({
@@ -68,9 +69,9 @@ function NewsShow({ id }) {
           </div>
         </div>
       <div className="notice_wrap">
-      <h1 className="notice_title">{notice.title}</h1>
+      <h1 className="notice_title">{notice?.title}</h1>
       <div className="title_info">
-        <span className="notice_createdAt">{notice.createdAt}</span>
+        <span className="notice_createdAt">{moment(notice.createdAt).format('YYYY-MM-DD HH:mm:ss')}</span>
         <span>{notice.viewCount}</span>
       </div>
       <div className="notice_border"></div>

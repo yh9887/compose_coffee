@@ -15,6 +15,9 @@ export default async function handler(
         viewCount: true,
         createdAt: true,
       },
+      orderBy: {
+        createdAt:'desc'
+      }
     });
     return res.status(200).json(result);
   }

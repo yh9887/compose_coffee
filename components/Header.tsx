@@ -41,9 +41,9 @@ function Header() {
               <li className={scrollPosition < 100 ? "menu_li" :"menu_li change_menu_li"}>NEWS</li>
             </Link>
             <div className="menu_icon">
-                <Link  href="/news" className="icon"><FontAwesomeIcon icon={faInstagram} className={scrollPosition < 100 ? "icon fa fa-brands" :"fa-brands change_menu_li"}/></Link>
-                <Link  href="/news" className="icon"><FontAwesomeIcon icon={faApple}  className={scrollPosition < 100 ? "icon fa fa-brands" :"fa-brands change_menu_li"} /></Link>
-                <Link  href="/news" className="icon"><FontAwesomeIcon icon={faAndroid}  className={scrollPosition < 100 ? "icon fa fa-brands" :"fa-brands change_menu_li"} /></Link>
+                <Link  href="https://www.instagram.com/compose_coffee/" className="icon"><FontAwesomeIcon icon={faInstagram} className={scrollPosition < 100 ? "icon fa fa-brands" :"fa-brands change_menu_li"}/></Link>
+                <Link  href="https://apps.apple.com/kr/app/id1543112499" className="icon"><FontAwesomeIcon icon={faApple}  className={scrollPosition < 100 ? "icon fa fa-brands" :"fa-brands change_menu_li"} /></Link>
+                <Link  href="https://play.google.com/store/apps/details?id=kr.co.posbank.compose" className="icon"><FontAwesomeIcon icon={faAndroid}  className={scrollPosition < 100 ? "icon fa fa-brands" :"fa-brands change_menu_li"} /></Link>
             </div>
           </ul>
         </div>

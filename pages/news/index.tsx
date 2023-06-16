@@ -7,7 +7,7 @@ import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
 import DownMenu from "@components/Down_menu";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import moment from "moment";
 function News() {
   const [items, setItems] = useState([]);
 
@@ -58,6 +58,10 @@ function News() {
           </div>
         </div>
 
+          
+            <Link href="/news/create">
+              <button>작성하기</button>
+            </Link>
         <div className="w-100 px-3 pt-21 ">
           <table className="table table-hover" id="table">
             <thead>
@@ -76,7 +80,7 @@ function News() {
                     <th>{item.id}</th>
                     <th className="contents">{item.title}</th>
                     <th>컴포즈</th>
-                    <th>{item.createdAt}</th>
+                    <th>{moment(item.createdAt).format('YYYY-MM-DD HH:mm:ss')}</th>
                     <th>{item.viewCount}</th>
                   </tr>
                 </Link>
