@@ -59,9 +59,6 @@ function News() {
         </div>
 
           
-            <Link href="/news/create">
-              <button>작성하기</button>
-            </Link>
         <div className="w-100 px-3 pt-21 ">
           <table className="table table-hover" id="table">
             <thead>
@@ -88,6 +85,12 @@ function News() {
             </tbody>
           </table>
         </div>
+
+            <div className="news_createBtn_wrap">
+              <Link href="/news/create">
+                  <button className="news_createBtn">공지사항 작성하기</button>
+              </Link>
+            </div>
       </div>
       <Footer />
     </>
