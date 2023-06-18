@@ -88,7 +88,7 @@ function News() {
 
             <div className="news_createBtn_wrap">
               <Link href="/news/create">
-                  <button className="news_createBtn">공지사항 작성하기</button>
+                  <button className="createBtn">공지사항 작성하기</button>
               </Link>
             </div>
       </div>

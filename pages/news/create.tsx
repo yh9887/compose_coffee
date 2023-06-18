@@ -8,8 +8,11 @@ import DownMenu from "@components/Down_menu";
 import { useState } from "react";
 
 function NewsCreate() {
-    const[title, setTitle] =useState<string>();
-    const[body, setBody] =useState("");
+    const [title, setTitle] = useState<string>();
+    const [body, setBody] = useState("");
+    const [description, setDescription] = useState("");
+    const [categories, setCategories] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState("");
     return (
         <div>
             <Header />
@@ -49,21 +52,29 @@ function NewsCreate() {
                     </div>
                 </div>
 
-                <div className="w-100 px-3 pt-21">
-                    <div>
-                        <input type="text" placeholder=" 제목을 입력하세요."
-                        onChange={(e)=> setTitle(e.target.value)}/>
-                        {/* input이 실행될때마다 뒤에 함수를 실행해라. 값을 변경하기 위해 가져옴 */}
-                    <div>
-                    <div>
-                        <textarea placeholder=" 내용을 입력하세요."
-                        onChange={(e)=> setBody(e.target.value)}/>
-                    </div>
-                    <button onClick={()=> console.log(title,body)}>작성하기</button>
+
+
+                <div className="form">
+                    <form style={{ margin: "10px" }}>
+                        <h3 className="form_title">제목</h3>
+                        <input
+                            type="text"
+                            placeholder="제목을 입력해주세요."
+                            onChange={(e) => setTitle(e.target.value)}
+                            className="form_input"
+                        />
+                        <h3 className="form_title">내용</h3>
+                        <textarea
+                            placeholder="내용을 입력해주세요."
+                            onChange={(e) => setBody(e.target.value)}
+                            className="form_info"
+                        />
+                        <div>
+                        <button type="button" onClick={() => console.log(title, body)} className="form_button createBtn">작성하기</button>
+                        </div>
+                    </form>
                 </div>
-            </div>
-                </div>
-            <Footer />
+                <Footer />
             </div>
         </div>
     );

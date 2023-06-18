@@ -81,7 +81,7 @@ function NewMenu() {
           <h3 className="form_title">대표 이미지</h3>
           <input type="file" onChange={() => console.log("이미지 선택 완료")} />
           <div>
-            <button type="button" onClick={itemCreateHandler} className="form_button">
+            <button type="button" onClick={itemCreateHandler} className="form_button createBtn">
               등록하기
             </button>
           </div>

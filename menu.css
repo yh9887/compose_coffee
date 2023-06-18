@@ -112,14 +112,25 @@ select{margin-bottom: 20px;}
 .form_input{
     margin-bottom:20px;
     width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    outline: none;
 }
 textarea{
     width: 100%;
-    resize: vertical
+    resize: vertical;
+    outline: none;
 }
-.form_info{margin-bottom: 20px;}
+.form_info{
+    margin-bottom: 20px;
+    min-height:300px ;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
 .form_button{
     margin-top: 5px;
     width: 40%;
     height: 40px;
+    outline: none;
 }

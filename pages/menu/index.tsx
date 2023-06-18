@@ -77,7 +77,7 @@ function Menu() {
           </div>
         </div>
         <Link href="/menu/new">
-          <button>상품등록</button>
+          <button className="createBtn">상품등록</button>
         </Link>
         <Footer />
       </div>

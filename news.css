@@ -57,7 +57,7 @@ tbody tr th{
     /* line-height: 80px; */
     text-align: center;
 }
-.news_createBtn{
+.createBtn{
     width: 200px;
     height: 50px;
     margin: 0 auto;
@@ -67,7 +67,7 @@ tbody tr th{
     cursor: pointer;
     font-size: 15px;
 }
-.news_createBtn:hover{
+.createBtn:hover{
     background-color:#07070754;
     border: 1px solid #07070700;
     color: white;
