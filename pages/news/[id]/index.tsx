@@ -8,8 +8,12 @@ import DownMenu from "@components/Down_menu";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import moment from "moment";
+import toast from "react-simple-toasts";
+import { useRouter } from 'next/router';
 
 function NewsShow({ id }) {
+  
+  const router = useRouter();
   const [notice, setNotice] = useState({
     id: "",
     title: "",
@@ -30,8 +34,15 @@ function NewsShow({ id }) {
     }
     fetchData();
   }, []);
-  
-  console.log("🚀 notice:", notice);
+  const onRemove = async () => {
+    if (window.confirm("정말 삭제합니까?")){
+      await axios.delete(`/api/notice?id=${id}`)
+      toast("삭제되었습니다.");  
+      await router.push("/news");
+    } else {
+      toast("취소합니다.");
+    }
+  };
 
   return (
     <>
@@ -81,7 +92,7 @@ function NewsShow({ id }) {
       <button 
         type="button"
         className="notice_delete createBtn"
-        onClick={()=>{console.log(notice.id)}}
+        onClick={onRemove}
         >삭제</button>
       <button type="button"className="notice_change createBtn">수정</button>
 

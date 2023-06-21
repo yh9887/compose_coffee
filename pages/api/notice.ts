@@ -35,7 +35,6 @@ export default async function handler(
   }
   if (req.method === "PUT") {
     const { id } = req.query;
-    console.log("@@@@",id)
     const notice = await prisma.notice.findFirst({
       where: {
         id,
@@ -50,6 +49,17 @@ export default async function handler(
       },
       data: {
         viewCount: notice.viewCount + 1 || 1
+      },
+    });
+    return res.status(200).json(result);
+  }
+  
+  if (req.method === "DELETE") {
+    const { id } = req.query;
+
+    const result = await prisma.notice.delete({
+      where: {
+        id,
       },
     });
     return res.status(200).json(result);
