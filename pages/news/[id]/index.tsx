@@ -75,7 +75,13 @@ function NewsShow({ id }) {
         <span>{notice.viewCount}</span>
       </div>
       <div className="notice_border"></div>
-      <div>{notice.body}</div>
+      <div className="notice_body">{notice.body}</div>
+      <button 
+        type="button"
+        className="notice_delete createBtn"
+        onClick={()=>{console.log(notice.id)}}
+        >삭제</button>
+      <button type="button"className="notice_change createBtn">수정</button>
 
       </div>
       <Footer />

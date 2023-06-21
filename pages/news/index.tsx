@@ -86,7 +86,7 @@ function News() {
           </table>
         </div>
 
-            <div className="news_createBtn_wrap">
+            <div className="createBtn_wrap">
               <Link href="/news/create">
                   <button className="createBtn">공지사항 작성하기</button>
               </Link>
