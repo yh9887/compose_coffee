@@ -1,18 +1,31 @@
 import Header from "@components/Header";
 import Footer from "@components/Footer";
+import axios from "axios";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
 import DownMenu from "@components/Down_menu";
 import { useState } from "react";
+import toast from "react-simple-toasts";
+import { useRouter } from 'next/router';
+
 
 function NewsCreate() {
+    const router = useRouter();
     const [title, setTitle] = useState<string>();
     const [body, setBody] = useState("");
     const [description, setDescription] = useState("");
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("");
+    const noticeCreateHandler = async ()=>{
+        await axios.post("/api/notice",{
+        title,
+        body
+        })   
+        toast("정상적으로 등록되었습니다.");  
+        router.push("/news");
+    }
     return (
         <div>
             <Header />
@@ -70,7 +83,7 @@ function NewsCreate() {
                             className="form_info"
                         />
                         <div>
-                        <button type="button" onClick={() => console.log(title, body)} className="form_button createBtn">작성하기</button>
+                        <button type="button" onClick={ noticeCreateHandler} className="form_button createBtn">작성하기</button>
                         </div>
                     </form>
                 </div>
