@@ -33,4 +33,26 @@ export default async function handler(
     });
     return res.status(200).json(result);
   }
+  if (req.method === "PUT") {
+    const { id } = req.query;
+
+    const notice = await prisma.notice.findFirst({
+      where: {
+        id,
+      },
+      select: {
+        viewCount: true,
+      },
+    });
+
+    const result = await prisma.notice.update({
+      where: {
+        id,
+      },
+      data: {
+        viewCount: notice.viewCount++,
+      },
+    });
+    return res.status(200).json(result);
+  }
 }
