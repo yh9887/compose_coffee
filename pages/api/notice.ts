@@ -23,4 +23,14 @@ export default async function handler(
     });
     return res.status(200).json(result);
   }
+  if (req.method === "POST") {
+    const { title, body } = req.body;
+    const result = await prisma.notice.create({
+      data: {
+        title,
+        body,
+      },
+    });
+    return res.status(200).json(result);
+  }
 }
