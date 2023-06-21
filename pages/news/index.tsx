@@ -71,10 +71,11 @@ function News() {
               </tr>
             </thead>
             <tbody id="tbody">
-              {items.map((item) => (
+              {items.map((item, index) => (
                 <Link key={item.id} href={`/news/${item.id}`}>
                   <tr>
-                    <th>{item.id}</th>
+                    {/* index는 0부터시작 */}
+                    <th>{items.length - index}</th>
                     <th className="contents">{item.title}</th>
                     <th>컴포즈</th>
                     <th>{moment(item.createdAt).format('YYYY-MM-DD HH:mm:ss')}</th>
