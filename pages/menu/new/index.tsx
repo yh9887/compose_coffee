@@ -6,8 +6,11 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
 import DownMenu from "@components/Down_menu";
 import { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
+import toast from "react-simple-toasts";
 
 function NewMenu() {
+  const router = useRouter();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [categories, setCategories] = useState([]);
@@ -22,12 +25,16 @@ function NewMenu() {
   }, []);
 
   const itemCreateHandler = async () => {
+    // 아이템 생성
     await axios.post("/api/item", {
       title,
       description,
       categoryId: selectedCategory,
     });
-    console.log(selectedCategory, title, description,)
+    // 메뉴페이지이동
+    
+toast("정상적으로 등록되었습니다.");  
+    router.push("/menu");
   };
 
   return (
