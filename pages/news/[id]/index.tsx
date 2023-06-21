@@ -25,10 +25,13 @@ function NewsShow({ id }) {
           id,
         },
       });
+      console.log(id)
+      await axios.put(`/api/notice?id=${id}`)
       setNotice(response.data);
     }
     fetchData();
   }, []);
+  
   console.log("🚀 notice:", notice);
 
   return (

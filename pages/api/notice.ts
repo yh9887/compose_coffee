@@ -35,7 +35,7 @@ export default async function handler(
   }
   if (req.method === "PUT") {
     const { id } = req.query;
-
+    console.log("@@@@",id)
     const notice = await prisma.notice.findFirst({
       where: {
         id,
@@ -44,13 +44,12 @@ export default async function handler(
         viewCount: true,
       },
     });
-
     const result = await prisma.notice.update({
       where: {
         id,
       },
       data: {
-        viewCount: notice.viewCount++,
+        viewCount: notice.viewCount + 1 || 1
       },
     });
     return res.status(200).json(result);
