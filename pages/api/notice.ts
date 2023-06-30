@@ -33,6 +33,21 @@ export default async function handler(
     });
     return res.status(200).json(result);
   }
+
+  if (req.method === "PATCH") {
+    const { id } = req.query;
+    const { title, body } = req.body;
+    const result = await prisma.notice.update({
+      where: {
+        id,
+      },
+      data: {
+        title: title,
+        body: body,
+      },
+    });
+    return res.status(200).json(result);
+  }
   if (req.method === "PUT") {
     const { id } = req.query;
     const notice = await prisma.notice.findFirst({
@@ -48,12 +63,12 @@ export default async function handler(
         id,
       },
       data: {
-        viewCount: notice.viewCount + 1 || 1
+        viewCount: notice.viewCount + 1 || 1,
       },
     });
     return res.status(200).json(result);
   }
-  
+
   if (req.method === "DELETE") {
     const { id } = req.query;
 
