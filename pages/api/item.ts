@@ -13,11 +13,11 @@ export default async function handler(
         id,
       },
       select: {
-        id : true,
-        image : true,
-        title : true,
-        description : true,
-        categoryId : true,
+        id: true,
+        image: true,
+        title: true,
+        description: true,
+        categoryId: true,
       },
     });
     return res.status(200).json(result);
@@ -36,7 +36,22 @@ export default async function handler(
     return res.status(200).json(result);
   }
 
-  
+  if (req.method === "PATCH") {
+    const { id } = req.query;
+    const { title, description, categoryId } = req.body;
+    const result = await prisma.item.update({
+      where: {
+        id,
+      },
+      data: {
+        title: title,
+        description: description,
+        categoryId: categoryId,
+      },
+    });
+    return res.status(200).json(result);
+  }
+
   if (req.method === "DELETE") {
     const { id } = req.query;
 
@@ -47,5 +62,4 @@ export default async function handler(
     });
     return res.status(200).json(result);
   }
-
 }
