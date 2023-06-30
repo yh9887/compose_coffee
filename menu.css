@@ -1,3 +1,6 @@
+input{
+    width: auto;
+}
 .sec2 {
     padding: 50px 7%;
 }
@@ -79,6 +82,17 @@
     text-align: center;
     padding: 100px 20px;
     box-sizing: border-box;
+}
+.menu_delBtn{
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute ;
+    top: 0;
+    right: 0;
+    border:none;
+    background-color: transparent;
 }
 
 .menu_box:hover #menu_info {

@@ -15,4 +15,15 @@ export default async function handler(
     });
     return res.status(200).json(result);
   }
+  
+  if (req.method === "DELETE") {
+    const {id } = req.query;
+
+    const result = await prisma.item.delete({
+      where: {
+        id,
+      },
+    });
+    return res.status(200).json(result);
+  }
 }

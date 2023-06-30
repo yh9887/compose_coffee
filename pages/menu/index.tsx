@@ -3,12 +3,16 @@ import Footer from "@components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import DownMenu from "@components/Down_menu";
 import Link from "next/link";
+import toast from "react-simple-toasts";
+import router, { useRouter } from 'next/router';
 
-function Menu() {
+function Menu({id}) {
+  const router = useRouter();
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -17,7 +21,19 @@ function Menu() {
       setItems(response.data);
     }
     fetchData();
+    
   }, []);
+  const menuDelte= async () => {
+    if (window.confirm("정말 삭제합니까?")){
+      await axios.delete(`/api/item?id=${id}`)
+      toast("삭제되었습니다.");  
+      await router.push("/menu");
+    } else {
+      toast("취소합니다.");
+      
+    }
+    console.log(id)
+  };
 
   return (
     <>
@@ -67,6 +83,12 @@ function Menu() {
                 <div key={item.id} className="menu_box">
                   <img id="menu_img" src="../img/menu/menu.jpg" alt="" />
                   <div id="menu_info">
+
+                    <button 
+                    type="button" 
+                    className="menu_delBtn"
+                    onClick={menuDelte}
+                    ><FontAwesomeIcon icon={faTrashCan} /></button>
                     <h4>{item.title}</h4>
                     <div className="line"></div>
                     <div>{item.description || ""}</div>
