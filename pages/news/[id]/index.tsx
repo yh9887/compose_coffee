@@ -42,7 +42,9 @@ function NewsShow({ id }) {
     } else {
       toast("취소합니다.");
     }
+    console.log(id)
   };
+
 
   return (
     <>
@@ -94,7 +96,11 @@ function NewsShow({ id }) {
         className="notice_delete createBtn"
         onClick={onRemove}
         >삭제</button>
-      <button type="button"className="notice_change createBtn">수정</button>
+      <Link href={`/news/${id}/edit`}>
+        <button type="button"
+          className="notice_change createBtn">수정
+        </button>
+      </Link>
 
       </div>
       <Footer />

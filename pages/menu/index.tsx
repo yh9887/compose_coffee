@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare} from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import DownMenu from "@components/Down_menu";
@@ -14,6 +15,7 @@ import router, { useRouter } from 'next/router';
 function Menu({id}) {
   const router = useRouter();
   const [items, setItems] = useState([]);
+  const [reload, setReload] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -22,18 +24,21 @@ function Menu({id}) {
     }
     fetchData();
     
-  }, []);
-  const menuDelte= async () => {
+  }, [reload]);
+  const menuDelete= async (id) => {
     if (window.confirm("정말 삭제합니까?")){
       await axios.delete(`/api/item?id=${id}`)
       toast("삭제되었습니다.");  
       await router.push("/menu");
+      setReload(!reload)
     } else {
       toast("취소합니다.");
-      
     }
     console.log(id)
   };
+  const menuEdit = (id)=>{
+    console.log(id)
+  }
 
   return (
     <>
@@ -83,12 +88,20 @@ function Menu({id}) {
                 <div key={item.id} className="menu_box">
                   <img id="menu_img" src="../img/menu/menu.jpg" alt="" />
                   <div id="menu_info">
-
+                  <Link href={`/menu/${id}/edit`}>
+                    <button 
+                    type="button" 
+                    className="menu_edit"
+                    onClick={()=> menuEdit(item.id)}
+                    ><FontAwesomeIcon icon={faPenToSquare} />
+                    </button>
+                  </Link>
                     <button 
                     type="button" 
                     className="menu_delBtn"
-                    onClick={menuDelte}
-                    ><FontAwesomeIcon icon={faTrashCan} /></button>
+                    onClick={()=> menuDelete(item.id)}
+                    ><FontAwesomeIcon icon={faTrashCan} />
+                    </button>
                     <h4>{item.title}</h4>
                     <div className="line"></div>
                     <div>{item.description || ""}</div>

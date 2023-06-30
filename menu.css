@@ -83,7 +83,7 @@ input{
     padding: 100px 20px;
     box-sizing: border-box;
 }
-.menu_delBtn{
+.menu_delBtn, .menu_edit{
     margin: 10px;
     width: 30px;
     height: 30px;
@@ -93,6 +93,9 @@ input{
     right: 0;
     border:none;
     background-color: transparent;
+}
+.menu_edit{
+    right:30px;
 }
 
 .menu_box:hover #menu_info {

@@ -9,19 +9,30 @@ import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import toast from "react-simple-toasts";
 
-function NewMenu() {
+function Edit() {
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [menu, setMenu] = useState({
+    id: "",
+    image: "",
+    title: "",
+    description: "",
+    categoryId: "",
+  })
 
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get("/api/categories");
+      const response = await axios.get("/api/item");
+      
       setCategories(response.data);
     }
-    
+    setTitle(response.data.title)
+    setBody(response.data.body)
+
+    setNotice(response.data);
     fetchData();
   }, []);
 
@@ -33,8 +44,8 @@ function NewMenu() {
       categoryId: selectedCategory,
     });
     // 메뉴페이지이동
-    
-toast("정상적으로 등록되었습니다.");  
+
+    toast("정상적으로 등록되었습니다.");
     router.push("/menu");
   };
 
@@ -42,27 +53,27 @@ toast("정상적으로 등록되었습니다.");
     <>
       <Header />
       <div className="sec1">
-            <img src="../img/menu/banner.jpg" alt="" />
-            <h1 className="sec1_title">MENU</h1>
-            <div className="nav">
-              <div className="home">
-                <FontAwesomeIcon
-                  icon={faHouseChimney}
-                  className={"fa-solid fa-house-chimney "}
-                />
-              </div>
-              <div className="nav_menu">
-                <div className="top_menu">
-                  <span>MENU</span>
-                  <FontAwesomeIcon
-                    icon={faAngleDown}
-                    className={"fa-sharp fa-solid fa-angle-down"}
-                  />
-                </div>
-                <DownMenu />
-              </div>
-            </div>
+        <img src="../../img/menu/banner.jpg" alt="" />
+        <h1 className="sec1_title">MENU</h1>
+        <div className="nav">
+          <div className="home">
+            <FontAwesomeIcon
+              icon={faHouseChimney}
+              className={"fa-solid fa-house-chimney "}
+            />
           </div>
+          <div className="nav_menu">
+            <div className="top_menu">
+              <span>MENU</span>
+              <FontAwesomeIcon
+                icon={faAngleDown}
+                className={"fa-sharp fa-solid fa-angle-down"}
+              />
+            </div>
+            <DownMenu />
+          </div>
+        </div>
+      </div>
       <div className="form">
         <form style={{ margin: "10px" }}>
           <select onChange={(e) => setSelectedCategory(e.target.value)}>
@@ -79,12 +90,14 @@ toast("정상적으로 등록되었습니다.");
             placeholder="상품명을 입력해주세요."
             onChange={(e) => setTitle(e.target.value)}
             className="form_input"
+            value={title}
           />
           <h3 className="form_title">상품소개</h3>
           <textarea
             placeholder="소개글을 입력해주세요."
             onChange={(e) => setDescription(e.target.value)}
             className="form_info"
+            value={description}
           />
           <h3 className="form_title">대표 이미지</h3>
           <input type="file" onChange={() => console.log("이미지 선택 완료")} />
@@ -99,5 +112,11 @@ toast("정상적으로 등록되었습니다.");
     </>
   );
 }
-
-export default NewMenu;
+export async function getServerSideProps(props: any) {
+  return {
+    props: {
+      id: props.query.id,
+    },
+  };
+}
+export default Edit;
