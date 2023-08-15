@@ -10,12 +10,20 @@ import { useEffect, useState } from "react";
 import toast from "react-simple-toasts";
 import { useRouter } from 'next/router';
 
+interface noticeType {
+    id: string;
+    title: string;
+    imageKey: string;
+    body: string;
+    createdAt: string;
+    viewCount: number;
+}
 
 function Edit({ id }) {
     const router = useRouter();
     const [title, setTitle] = useState<string>();
-    const [body, setBody] = useState("");
-    const [notice, setNotice] = useState({
+    const [body, setBody] = useState<string>("");
+    const [notice, setNotice] = useState<noticeType>({
         id: "",
         title: "",
         imageKey: "",
@@ -23,12 +31,13 @@ function Edit({ id }) {
         createdAt: "",
         viewCount: null,
     });
+
     const noticeCreateHandler = async () => {
         await axios.patch(`/api/notice?id=${id}`, {
-            title,
+            title: title,
             body
         })
-        toast("정상적으로 등록되었습니다.");
+        toast("정상적으로 수정되었습니다.");
         router.push(`/news/${id}`);
     }
 

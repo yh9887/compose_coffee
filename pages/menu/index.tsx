@@ -11,6 +11,7 @@ import DownMenu from "@components/Down_menu";
 import Link from "next/link";
 import toast from "react-simple-toasts";
 import router, { useRouter } from 'next/router';
+import { getUrl } from "../../lib/util";
 
 function Menu({id}) {
   const router = useRouter();
@@ -83,12 +84,20 @@ function Menu({id}) {
                 <li>사이드메뉴</li>
               </ul>
             </div>
+
+
+       
+            <div className="createBtn_wrap text_align_right m_30">
+              <Link href="/menu/new">
+                <button className="createBtn">상품등록</button>
+              </Link>
+            </div>
             <div className="menu_content">
               {items.map((item) => (
                 <div key={item.id} className="menu_box">
-                  <img id="menu_img" src="../img/menu/menu.jpg" alt="" />
+                  <img id="menu_img" src={ item.image ? getUrl(item.image) : "../img/menu/menu.jpg"} alt="" />
                   <div id="menu_info">
-                  <Link href={`/menu/${id}/edit`}>
+                  <Link href={`/menu/${item.id}/edit`}>
                     <button 
                     type="button" 
                     className="menu_edit"
@@ -111,7 +120,7 @@ function Menu({id}) {
             </div>
           </div>
         </div>
-        <div className="createBtn_wrap">
+        <div className="createBtn_wrap m_30">
           <Link href="/menu/new">
             <button className="createBtn">상품등록</button>
           </Link>

@@ -15,9 +15,6 @@ function NewsCreate() {
     const router = useRouter();
     const [title, setTitle] = useState<string>();
     const [body, setBody] = useState("");
-    const [description, setDescription] = useState("");
-    const [categories, setCategories] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState("");
     const noticeCreateHandler = async ()=>{
         await axios.post("/api/notice",{
         title,

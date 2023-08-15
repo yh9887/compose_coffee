@@ -8,6 +8,7 @@ import DownMenu from "@components/Down_menu";
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import toast from "react-simple-toasts";
+import {getKey} from "lib/util";
 
 function NewMenu() {
   const router = useRouter();
@@ -15,6 +16,7 @@ function NewMenu() {
   const [description, setDescription] = useState("");
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [file, setFile] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -26,17 +28,22 @@ function NewMenu() {
   }, []);
 
   const itemCreateHandler = async () => {
+    const { key } = await getKey(file);
+
     // 아이템 생성
     await axios.post("/api/item", {
       title,
       description,
       categoryId: selectedCategory,
+      image: key,
     });
     // 메뉴페이지이동
-    
-toast("정상적으로 등록되었습니다.");  
+
+    toast("정상적으로 등록되었습니다.");
     router.push("/menu");
   };
+
+
 
   return (
     <>
@@ -87,7 +94,7 @@ toast("정상적으로 등록되었습니다.");
             className="form_info"
           />
           <h3 className="form_title">대표 이미지</h3>
-          <input type="file" onChange={() => console.log("이미지 선택 완료")} />
+          <input type="file"   onChange={(event) => setFile(event.target.files[0])} />
           <div>
             <button type="button" onClick={itemCreateHandler} className="form_button createBtn">
               등록하기

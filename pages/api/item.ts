@@ -38,7 +38,7 @@ export default async function handler(
 
   if (req.method === "PATCH") {
     const { id } = req.query;
-    const { title, description, categoryId } = req.body;
+    const { title, description, categoryId, image } = req.body;
     const result = await prisma.item.update({
       where: {
         id,
@@ -47,6 +47,7 @@ export default async function handler(
         title: title,
         description: description,
         categoryId: categoryId,
+        image: image,
       },
     });
     return res.status(200).json(result);

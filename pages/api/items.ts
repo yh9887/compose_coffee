@@ -11,6 +11,7 @@ export default async function handler(
         id: true,
         title: true,
         description: true,
+        image: true
       },
     });
     return res.status(200).json(result);

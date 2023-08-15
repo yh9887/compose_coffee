@@ -8,44 +8,51 @@ import DownMenu from "@components/Down_menu";
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import toast from "react-simple-toasts";
+import { getKey, getUrl } from "@lib/util";
 
-function Edit() {
+
+function Edit({id}) {
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [menu, setMenu] = useState({
-    id: "",
-    image: "",
-    title: "",
-    description: "",
-    categoryId: "",
-  })
+  const [image, setImage] = useState("");
+  const [file, setFile] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
-      const response = await axios.get("/api/item");
-      
+    async function fetchCategoryData() {
+      const response = await axios.get("/api/categories");
       setCategories(response.data);
     }
-    setTitle(response.data.title)
-    setBody(response.data.body)
+    async function fetchItemData() {
+      const response = await axios.get("/api/item", {
+        params: {
+          id,
+        },
+      });
+      setTitle(response.data.title);
+      setDescription(response.data.description);
+      setSelectedCategory(response.data.categoryId);
+      setImage(response.data.image);
+    }
 
-    setNotice(response.data);
-    fetchData();
+    fetchCategoryData();
+    fetchItemData();
   }, []);
 
   const itemCreateHandler = async () => {
+    const {key} = await getKey(file);
     // 아이템 생성
-    await axios.post("/api/item", {
+    await axios.patch(`/api/item?id=${id}`, {
       title,
       description,
       categoryId: selectedCategory,
+      image: key || ""
     });
     // 메뉴페이지이동
 
-    toast("정상적으로 등록되었습니다.");
+    toast("정상적으로 수정되었습니다.");
     router.push("/menu");
   };
 
@@ -76,11 +83,11 @@ function Edit() {
       </div>
       <div className="form">
         <form style={{ margin: "10px" }}>
-          <select onChange={(e) => setSelectedCategory(e.target.value)}>
+          <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
             <option value="">선택</option>
             {categories.map((category) => (
               <option key={category.id} value={category.id}>
-                {category.title}
+                {category.title} 
               </option>
             ))}
           </select>
@@ -100,10 +107,11 @@ function Edit() {
             value={description}
           />
           <h3 className="form_title">대표 이미지</h3>
-          <input type="file" onChange={() => console.log("이미지 선택 완료")} />
+          <img style={{width:"300px", height:"300px"}} id="menu_img" src={ image ? getUrl(image) : "../../img/menu/menu.jpg"} alt="" />
+          <input type="file" onChange={(event) => setFile(event.target.files[0])} />
           <div>
             <button type="button" onClick={itemCreateHandler} className="form_button createBtn">
-              등록하기
+              수정하기
             </button>
           </div>
         </form>

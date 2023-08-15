@@ -26,7 +26,7 @@ function NewsShow({ id }) {
     async function fetchData() {
       const response = await axios.get("/api/notice", {
         params: {
-          id,
+          id, 
         },
       });
       await axios.put(`/api/notice?id=${id}`)
