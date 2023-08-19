@@ -62,8 +62,9 @@ tbody tr th{
 .text_align_right{
     text-align: right;
 }
-.m_30{
-    margin:30px auto;    
+
+.mb_100{
+    margin: 0 auto 100px;  
 }
 .createBtn{
     width: 200px;

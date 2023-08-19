@@ -87,11 +87,7 @@ function Menu({id}) {
 
 
        
-            <div className="createBtn_wrap text_align_right m_30">
-              <Link href="/menu/new">
-                <button className="createBtn">상품등록</button>
-              </Link>
-            </div>
+
             <div className="menu_content">
               {items.map((item) => (
                 <div key={item.id} className="menu_box">
@@ -120,7 +116,7 @@ function Menu({id}) {
             </div>
           </div>
         </div>
-        <div className="createBtn_wrap m_30">
+        <div className="createBtn_wrap mb_100">
           <Link href="/menu/new">
             <button className="createBtn">상품등록</button>
           </Link>
